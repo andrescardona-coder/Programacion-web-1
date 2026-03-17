@@ -1,0 +1,141 @@
+/*Selector universal */
+{
+ box-sizing:border-box;
+}
+
+/*Selector de elemento (se aplica a todas las etiquetas <p>)*/
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #5a6877;
+}
+
+/*Selector de clase (se crea una clase para los elementos destacados)*/
+.destacado {
+    background-color: #f1c40f;
+    padding: 10px;
+    border-left: 5px solid #825716;
+    font-weight: bold;
+}
+
+/*Selector de ID para un elemento unico*/
+#educacion {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/*Selector de atributo*/
+/*Selecciona todos los elementos que tengan Intagram en su href*/
+a[href*="instagram"] {
+    color: #3053e1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.instagram-container {
+    width: 100%;
+    max-width: 580px;        /* Mismo ancho máximo que pide Instagram */
+    margin: 20px auto;        /* Centrado automático */
+    padding: 0 10px;          /* Un poco de espacio a los lados */
+    box-sizing: border-box;
+}
+
+.instagram-container iframe {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px;        /* Altura mínima para que se vea completo */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/*Selector de descendiente (todos los td dentro de table)*/
+table td {
+    padding: 12px;
+    border: 1px solid #2ef62e;
+    text-align: left;
+}
+
+/*Hijo directo (<li> que son hijos directos de <ul>)*/
+ul > li {
+    list-style-type: square;
+    margin-left: 20px;
+    color: #16a085;
+}
+
+/*Hermano adyacente (el primer <p> después de un <h2>)*/
+h2 + p {
+    font-style: italic;
+    color: #7eb6a2;
+    border-bottom: 2px dashed #aea768;
+    padding-bottom: 10px;
+}
+
+/*Hermano general (todos los <p> después de un <h1>)*/
+h1 ~ p {
+    letter-spacing: 0.5px;
+    background-color: #782446;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+/*Posicionamiento estatico por defecto*/
+h2 {
+    position: static; /* Es el valor por defecto, no hace nada especial */
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/*Posicionamiento relativo (se mueve desde la posición original)*/
+.destacado {
+    position: relative;
+    top: 10px;      /* Se mueve 10px hacia abajo desde donde estaba */
+    left: 20px;      /* Se mueve 20px hacia la derecha */
+    background-color: #f1c40f;
+    padding: 10px;
+    border-left: 5px solid #e67e22;
+    z-index: 10;     /* Se asegura de estar por encima */
+}
+
+/*Posicionamiento absoluto (se posiciona respecto al contenedor )*/
+
+h4::after {
+    position: absolute;
+    top: -20px;      /* Se coloca 20px ARRIBA del h2 */
+    right: 0;        /* Pegado a la derecha */
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*Posicionamiento fijo (se fija a la pantalla aunque se haga scroll)*/
+.fixed-notice {
+    position: fixed;
+    bottom: 20px;    /* Pegado abajo */
+    right: 20px;     /* Pegado a la derecha */
+    background-color: #3498db;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Posicionamiento pegajoso*/
+h1 {
+    position: sticky;
+    top: 0;          /* Cuando llega al tope, se pega */
+    background-color: #07080b;
+    color: white;
+    padding: 15px;
+    margin: 30px 0 20px 0;
+    z-index: 50;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(7, 8, 11, 1);
+}
